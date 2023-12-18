@@ -54,6 +54,7 @@ exports.getProductDetails = (req, res, next) => {
     });
   });
 };
+//contollers
 
 exports.postMyCart=(req,res,next)=>{
 const productId=req.body.productId;
