@@ -1,0 +1,15 @@
+{
+    "products": [
+        {
+            "productId": "606",
+            "qty": 1,
+            "title": "New Shoes"
+        },
+        {
+            "productId": "334",
+            "qty": 1,
+            "title": "New Computer"
+        }
+    ],
+    "totalPrice": 499
+}

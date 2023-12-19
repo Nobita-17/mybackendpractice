@@ -17,7 +17,8 @@ const getProductsFromFile = (callbackFn) => {
 };
 
 module.exports = class Product {
-  constructor(_title, _description, _price, _imageUrl) {
+  constructor(productid,_title, _description, _price, _imageUrl) {
+    this.productId=productid;
     this.title = _title;
     this.description = _description;
     this.price = _price;
@@ -33,6 +34,10 @@ module.exports = class Product {
         console.log('err', err);
       });
     });
+  }
+
+  saveModify(){
+
   }
 
   static fetchAll(callbackFn) {
