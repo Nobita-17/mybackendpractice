@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+
+
 const pathBuilt = path.join(
     path.dirname(require.main.filename),
     'data',
@@ -37,7 +39,7 @@ module.exports = class Cart {
                 cart.products = [...cart.products];   
                 cart.products[existProductIndex] = updatedProduct;  //adding upadted product"Replace the product in the cart.products array at the position given by existProductIndex with the updated product information in updatedProduct
             } else {
-                updatedProduct = { productId: productId, qty: 1, title: title };
+                updatedProduct = { productId: productId, qty: 1, title: title };   //setting qty 
                 cart.products.push(updatedProduct);      
             }
 
