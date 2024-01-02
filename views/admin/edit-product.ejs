@@ -30,9 +30,13 @@
           />
       </div>
       <% if (isEdit) { %>
-        <!-- Hidden field for productId -->
+        <!-- Hidden field for productId  Hidden input fields are commonly used in forms to store 
+          additional data that should be submitted with the form but is not intended to be visible
+           or editable by the user -->
         <input type="hidden" name="productId" value="<%= isEdit ? product.productId : '' %>">
       <% } %>
+
+      
       <button type="submit">
           <%= isEdit ? 'Save Changes' : 'Add Product' %>
       </button>

@@ -20,8 +20,8 @@ exports.getAddProduct = (req, res, next) => {
 //used for handling edit functionality 
 
 exports.getEditProduct = (req, res, next) => {
-  const editMode=req.query.edit;    
-  if(!editMode){     //cheching if it is true then redirect
+  const editMode = req.query.edit;
+  if (!editMode) {     //cheching if it is true then redirect
     return res.redirect('/');
   }
   res.render('admin/edit-product', {
@@ -60,7 +60,7 @@ exports.postAddProduct = (req, res, next) => {
   //now product variable holds an object representing of Product class with the specified characteristics
   //calling product.save() is essentially triggering the logic defined in the save method of the Product class 
 
-  const product = new Product(null,title, description, price, imageUrl); 
+  const product = new Product(null, title, description, price, imageUrl);
   product.save(); //we create an instance of Product class , now this says Product class has a method named save
   console.log('New Product is added');
   res.redirect('/');
@@ -84,7 +84,24 @@ exports.getEditMyProduct = (req, res, next) => {
 };
 
 
+exports.postEditProduct = (req, res, next) => {
+
+  const productId = req.body.productId;
+  const updatedTitle = req.body.title;
+  const updatedPrice = req.body.price;
+  const updatedUrl = req.body.imageUrl;
+  const updatedDec = req.body.description;
+
+  const updatedProduct = new Product(productId, updatedTitle, updatedPrice, updatedUrl, updatedDec);
+
+  updatedProduct.save();
+  res.redirect('/admin/products');
+
+}
+
+
+
 //construct a new product and replace the existing one with new product 
-exports.saveModifiedProduct=(req,res,next)=>{
-console.log(req.body);
-};
+// exports.saveModifiedProduct = (req, res, next) => {
+//   console.log(req.body);
+// };
