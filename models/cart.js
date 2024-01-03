@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-
+//taking roort path 
+//rootr 
 
 const pathBuilt = path.join(
     path.dirname(require.main.filename),
